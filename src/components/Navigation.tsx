@@ -32,11 +32,11 @@ const Navigation = () => {
             className="cursor-pointer"
             onClick={() => scrollToSection('hero')}
           >
-            <img
-              src="/ky.png"
-              alt="Logo"
-              className="h-8 w-auto scale-150"
-            />
+          <img
+            src={`${import.meta.env.BASE_URL}ky.png`}
+            alt="Logo"
+            className="h-8 w-auto scale-150"
+          />
           </div>
 
           {/* Desktop Menu */}
