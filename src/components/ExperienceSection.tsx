@@ -7,17 +7,10 @@ const ExperienceSection = () => {
       description: "Developed scalable backend systems, REST APIs, and microservices."
     },
     {
-      title: "Web Developer", 
-      description: "Designed and built full-stack, responsive, and interactive websites that deliver seamless user experiences."
-    },
-    {
       title: "AI & Machine Learning Engineer",
       description: "Built predictive models, deep learning systems."
     },
-    {
-      title: "Blockchain Developer",
-      description: "Developed decentralized apps and smart contracts."
-    },
+
     // {
     //   title: "Trader",
     //   description: "Applied technical analysis, harmonic patterns, and ICT strategies."
