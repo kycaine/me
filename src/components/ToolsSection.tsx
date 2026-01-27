@@ -90,8 +90,7 @@ const ToolsSection = () => {
   };
 
   const handleDonate = () => {
-    // Ko-fi donation link
-    window.open('https://ko-fi.com/kycaine', '_blank');
+    window.open('https://saweria.co/kycaine', '_blank');
   };
 
   return (
