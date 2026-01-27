@@ -36,6 +36,12 @@ const ToolsSection = () => {
       github: "https://github.com/kycaine/data-forge-to-db",
       repo: "kycaine/data-forge-to-db",
     },
+     {
+      title: "Document Summarizer",
+      description: "A web-based AI application that summarizes academic and professional documents.",
+      github: "https://github.com/kycaine/docusum.ai",
+      repo: "kycaine/docusum.ai",
+    },
   ];
 
   const fetchReadme = async (tool: Tool) => {
