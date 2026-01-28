@@ -37,13 +37,13 @@ const HeroSection = () => {
           <div className="flex gap-4 flex-wrap justify-center">
             <Button
               onClick={() => scrollToSection("summary")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full font-semibold animate-glow smooth-transition transform hover:scale-105 w-40"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full animate-glow smooth-transition transform hover:scale-105 w-40"
             >
               Explore More
             </Button>
             <Button
               onClick={() => navigate("/tools")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full font-semibold animate-glow smooth-transition transform hover:scale-105 w-40"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full animate-glow smooth-transition transform hover:scale-105 w-40"
             >
               Tools...
             </Button>
