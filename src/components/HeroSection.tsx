@@ -42,7 +42,13 @@ const HeroSection = () => {
               Explore More
             </Button>
             <Button
-              onClick={() => navigate("https://kycaine.github.io/eternaltech/")}
+              onClick={() =>
+                window.open(
+                  "https://kycaine.github.io/eternaltech/",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
               className="bg-transparent border-2 border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6 rounded-full animate-glow smooth-transition transform hover:scale-105"
             >
               Need AI Automation?
