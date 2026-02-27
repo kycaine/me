@@ -90,11 +90,11 @@ export default {
 					'50%': { transform: 'translateY(-10px)' }
 				},
 				'glow': {
-					'0%, 100%': { 
-						boxShadow: '0 0 20px hsl(var(--primary)), 0 0 40px hsl(var(--primary)), 0 0 60px hsl(var(--primary))'
+					'0%, 100%': {
+						boxShadow: '0 0 1px hsl(var(--primary)), 0 0 20px hsl(var(--primary))'
 					},
-					'50%': { 
-						boxShadow: '0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary))'
+					'50%': {
+						boxShadow: '0 0 1px hsl(var(--primary)), 0 0 10px hsl(var(--primary))'
 					}
 				},
 				'slide-up': {

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
   const navigate = useNavigate();
-  
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -42,10 +42,10 @@ const HeroSection = () => {
               Explore More
             </Button>
             <Button
-              onClick={() => navigate("/tools")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full animate-glow smooth-transition transform hover:scale-105 w-40"
+              onClick={() => navigate("https://kycaine.github.io/eternaltech/")}
+              className="bg-transparent border-2 border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6 rounded-full animate-glow smooth-transition transform hover:scale-105"
             >
-              Tools...
+              Need AI Automation?
             </Button>
           </div>
           <div className="mt-12 w-6 h-10 border-2 border-primary rounded-full flex justify-center items-start animate-float">
