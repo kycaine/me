@@ -32,8 +32,8 @@ const ExperienceSection = () => {
               <div className="flex items-start space-x-4">
                 <CheckCircle className="text-primary mt-1 flex-shrink-0 group-hover:scale-110 smooth-transition" size={24} />
                 <div>
-                  <h3 className="text-xl font-bold text-primary mb-2">{exp.title}</h3>
-                  <p className="text-foreground">{exp.description}</p>
+                  <h3 className="text-2xl font-bold text-primary mb-2">{exp.title}</h3>
+                  <p className="text-lg text-foreground">{exp.description}</p>
                 </div>
               </div>
             </div>

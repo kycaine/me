@@ -10,83 +10,83 @@ All colors MUST be HSL.
   :root {
     /* Portfolio Color Scheme */
     --background: 42 22.0% 88.4%; /* #e8e4db */
-    --foreground: 79 17.3% 38.4%; /* #687351 */
+    --foreground: 0 0% 100%; /* #687351 */
 
     --card: 42 20.0% 73.5%; /* #c9c1ae */
-    --card-foreground: 79 17.3% 38.4%; /* #687351 */
+    --card-foreground: 0 0% 100%; /* #687351 */
 
     --popover: 42 20.0% 73.5%;
-    --popover-foreground: 79 17.3% 38.4%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 79 17.3% 38.4%; /* #687351 */
+    --primary: 0 0% 100%; /* #687351 */
     --primary-foreground: 42 22.0% 88.4%; /* #e8e4db */
 
     --secondary: 71 15.3% 56.5%; /* #9ba17f */
-    --secondary-foreground: 79 17.3% 38.4%; /* #687351 */
+    --secondary-foreground: 0 0% 100%; /* #687351 */
 
     --muted: 42 20.0% 73.5%; /* #c9c1ae */
-    --muted-foreground: 79 17.3% 38.4%; /* #687351 */
+    --muted-foreground: 0 0% 100%; /* #687351 */
 
     --accent: 71 15.3% 56.5%; /* #9ba17f */
-    --accent-foreground: 79 17.3% 38.4%; /* #687351 */
+    --accent-foreground: 0 0% 100%; /* #687351 */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 42 22.0% 88.4%;
 
     --border: 42 20.0% 73.5%; /* #c9c1ae */
     --input: 42 20.0% 73.5%; /* #c9c1ae */
-    --ring: 79 17.3% 38.4%; /* #687351 */
+    --ring: 0 0% 100%; /* #687351 */
 
     --radius: 0.75rem;
 
     --sidebar-background: 42 22.0% 88.4%;
-    --sidebar-foreground: 79 17.3% 38.4%;
-    --sidebar-primary: 79 17.3% 38.4%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
     --sidebar-primary-foreground: 42 22.0% 88.4%;
     --sidebar-accent: 71 15.3% 56.5%;
-    --sidebar-accent-foreground: 79 17.3% 38.4%;
+    --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 42 20.0% 73.5%;
-    --sidebar-ring: 79 17.3% 38.4%;
+    --sidebar-ring: 0 0% 100%;
   }
 
   .dark {
     /* Apply same new color scheme to dark mode */
     --background: 42 22.0% 88.4%; /* #e8e4db */
-    --foreground: 79 17.3% 38.4%; /* #687351 */
+    --foreground: 0 0% 100%; /* #687351 */
 
     --card: 42 20.0% 73.5%; /* #c9c1ae */
-    --card-foreground: 79 17.3% 38.4%; /* #687351 */
+    --card-foreground: 0 0% 100%; /* #687351 */
 
     --popover: 42 20.0% 73.5%;
-    --popover-foreground: 79 17.3% 38.4%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 79 17.3% 38.4%; /* #687351 */
+    --primary: 0 0% 100%; /* #687351 */
     --primary-foreground: 42 22.0% 88.4%; /* #e8e4db */
 
     --secondary: 71 15.3% 56.5%; /* #9ba17f */
-    --secondary-foreground: 79 17.3% 38.4%; /* #687351 */
+    --secondary-foreground: 0 0% 100%; /* #687351 */
 
     --muted: 42 20.0% 73.5%; /* #c9c1ae */
-    --muted-foreground: 79 17.3% 38.4%; /* #687351 */
+    --muted-foreground: 0 0% 100%; /* #687351 */
 
     --accent: 71 15.3% 56.5%; /* #9ba17f */
-    --accent-foreground: 79 17.3% 38.4%; /* #687351 */
+    --accent-foreground: 0 0% 100%; /* #687351 */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 42 22.0% 88.4%;
 
     --border: 42 20.0% 73.5%; /* #c9c1ae */
     --input: 42 20.0% 73.5%; /* #c9c1ae */
-    --ring: 79 17.3% 38.4%; /* #687351 */
+    --ring: 0 0% 100%; /* #687351 */
 
     --sidebar-background: 42 22.0% 88.4%;
-    --sidebar-foreground: 79 17.3% 38.4%;
-    --sidebar-primary: 79 17.3% 38.4%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
     --sidebar-primary-foreground: 42 22.0% 88.4%;
     --sidebar-accent: 71 15.3% 56.5%;
-    --sidebar-accent-foreground: 79 17.3% 38.4%;
+    --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 42 20.0% 73.5%;
-    --sidebar-ring: 79 17.3% 38.4%;
+    --sidebar-ring: 0 0% 100%;
   }
 }
 
@@ -126,5 +126,47 @@ All colors MUST be HSL.
   .modal-backdrop {
     backdrop-filter: blur(8px);
     background: hsla(0, 0%, 0%, 0.7);
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Global Text Overrides */
+  * {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .gold-gradient {
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  /* Make Cards Transparent */
+  .bg-card, 
+  .bg-card\/80, 
+  .bg-muted, 
+  .bg-muted\/50, 
+  .bg-secondary, 
+  .bg-secondary\/50, 
+  .bg-black\/50,
+  .bg-background\/80 {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Card Hover State (Dark Grey) */
+  .bg-card.group:hover {
+    background-color: #333333 !important;
+  }
+
+  /* Modal Detail Background (Dark Grey) */
+  .fixed .bg-card {
+    background-color: #333333 !important;
   }
 }

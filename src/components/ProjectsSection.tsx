@@ -102,12 +102,12 @@ const ProjectsSection = () => {
 
           {/* Highlighted Projects */}
           <div className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 flex items-center ">
+            <h3 className="text-3xl md:text-4xl font-bold mb-8 flex items-center ">
               <Code className="gold-gradient mr-3" size={32} />
               <span className="gold-gradient">Highlighted Projects</span>
             </h3>
             {loadingHighlighted ? (
-              <p className="text-muted-foreground">Loading highlighted projects...</p>
+              <p className="text-lg text-muted-foreground">Loading highlighted projects...</p>
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {highlightedRepos.map(repo => (
@@ -121,7 +121,7 @@ const ProjectsSection = () => {
           <div className="text-center mt-12">
             <button
               onClick={handleShowRepos}
-              className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/80 smooth-transition"
+              className="px-6 py-3 bg-[#800000] text-primary-foreground rounded-lg text-lg font-semibold hover:bg-[#660000] smooth-transition"
             >
               {showRepos ? "Hide All Repos" : "View All Repos"}
             </button>
@@ -130,9 +130,9 @@ const ProjectsSection = () => {
           {/* Expanded Section for All Repos */}
           {showRepos && (
             <div className="mt-12 animate-fade-in">
-              <h3 className="text-2xl font-bold mb-6 text-primary">All GitHub Repositories</h3>
+              <h3 className="text-3xl font-bold mb-6 text-primary">All GitHub Repositories</h3>
               {loadingAllRepos ? (
-                <p className="text-center text-muted-foreground">Loading...</p>
+                <p className="text-center text-lg text-muted-foreground">Loading...</p>
               ) : (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {allRepos.map(repo => (
@@ -165,12 +165,12 @@ const ProjectsSection = () => {
               </button>
             </div>
 
-            <p className="text-foreground/90 text-lg leading-relaxed mb-8">
+            <p className="text-foreground/90 text-xl leading-relaxed mb-8">
               {selectedRepo.description || "No description provided for this repository."}
             </p>
 
             {loadingDetails ? (
-              <div className="flex items-center space-x-2 text-muted-foreground mb-8">
+              <div className="flex items-center space-x-2 text-lg text-muted-foreground mb-8">
                 <Activity className="animate-spin" size={20} />
                 <span>Loading repository details...</span>
               </div>
@@ -191,7 +191,7 @@ const ProjectsSection = () => {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-muted-foreground text-sm">No language data found.</p>
+                    <p className="text-muted-foreground text-base">No language data found.</p>
                   )}
                 </div>
 
@@ -221,7 +221,7 @@ const ProjectsSection = () => {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-muted-foreground text-sm">No contributors found.</p>
+                    <p className="text-muted-foreground text-base">No contributors found.</p>
                   )}
                 </div>
               </div>
@@ -232,7 +232,7 @@ const ProjectsSection = () => {
                 href={selectedRepo.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/80 smooth-transition w-full sm:w-auto"
+                className="inline-flex items-center justify-center bg-[#800000] text-primary-foreground px-6 py-3 rounded-lg text-lg font-semibold hover:bg-[#660000] smooth-transition w-full sm:w-auto"
               >
                 Visit Project on GitHub <ExternalLink className="ml-2" size={18} />
               </a>

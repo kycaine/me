@@ -26,7 +26,7 @@ const ContactSection = () => {
         </h2>
 
         <div className="text-center mb-12">
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Ready for a fistfight? Muay Thai? Boxing? ...No thanks, I’m not built for that. Let’s just collaborate instead!
           </p>
         </div>
@@ -44,8 +44,8 @@ const ContactSection = () => {
                 {contact.icon}
               </div>
               <div className="text-left">
-                <p className="text-sm text-muted-foreground">{contact.label}</p>
-                <p className="text-foreground font-semibold group-hover:text-primary smooth-transition">
+                <p className="text-base text-muted-foreground">{contact.label}</p>
+                <p className="text-lg md:text-xl text-foreground font-semibold group-hover:text-primary smooth-transition">
                   {contact.value}
                 </p>
               </div>
