@@ -1,51 +1,37 @@
-import { useState } from "react";
-
 export interface Repo {
   id: number;
   name: string;
   html_url: string;
   description: string;
   language: string;
-  created_at: string;   
-  updated_at: string;  
+  created_at: string;
+  updated_at: string;
 }
 
-
-const RepoCard = ({ repo }: { repo: Repo }) => {
-  const [expanded, setExpanded] = useState(false);
-
+const RepoCard = ({ repo, onView }: { repo: Repo; onView: (repo: Repo) => void }) => {
   return (
     <div
-      className={`bg-secondary/30 rounded-xl p-6 border border-border hover:border-primary/50 hover:scale-105 smooth-transition flex flex-col justify-between ${
-        expanded ? "h-auto" : "h-55"
-      }`}
+      onClick={() => onView(repo)}
+      className="bg-card backdrop-blur-sm rounded-xl p-6 border border-border hover:border-primary hover:scale-105 smooth-transition flex flex-col justify-between h-55 cursor-pointer group"
     >
       <div>
-        <h4 className="text-lg font-bold text-primary mb-2">{repo.name}</h4>
-        <p className={`text-muted-foreground mb-2 ${expanded ? "" : "line-clamp-1"}`}>
+        <h4 className="text-lg font-bold text-foreground mb-2 group-hover:text-foreground/80">{repo.name}</h4>
+        <p className="text-muted-foreground mb-2 line-clamp-2">
           {repo.description || "No description provided"}
         </p>
-
-        {repo.description && repo.description.length > 100 && (
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="text-sm text-primary hover:underline"
-          >
-            {expanded ? "Show less" : "Show more"}
-          </button>
-        )}
       </div>
 
       <div className="flex justify-between items-center mt-4">
         <span className="text-sm text-muted-foreground">{repo.language || "N/A"}</span>
-        <a
-          href={repo.html_url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary font-semibold hover:underline"
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onView(repo);
+          }}
+          className="text-foreground font-semibold hover:underline"
         >
           View →
-        </a>
+        </button>
       </div>
     </div>
   );

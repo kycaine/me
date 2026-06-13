@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+
 import heroBg from "@/assets/hero-bg.jpg";
 import { useNavigate } from "react-router-dom";
 
@@ -12,52 +12,35 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative parallax-bg"
-      style={{ backgroundImage: `url(${heroBg})` }}
+      className="min-h-screen flex items-end justify-start relative pb-16 md:pb-24 pt-32"
+      style={{ fontFamily: "'Times New Roman', Times, serif" }}
     >
-      <div className="absolute inset-0 hero-gradient" />
-      <div className="relative mt-32 z-10 text-center max-w-4xl mx-auto px-6">
-        <h1 className="text-4xl mt-12 sm:text-6xl md:text-8xl font-bold mb-10 animate-slide-up">
-          <span className="text-foreground">&lt;</span>
-          <span className="gold-gradient">Rezki </span>
-          <span className="gold-gradient">Ade </span>
-          <span className="text-foreground">/&gt;</span>
-        </h1>
-
-        <h3 className="text-xl md:text-3xl mb-4 mt-12 text-muted-foreground animate-slide-up font-bold">
-          Engineer
-        </h3>
-
-        <p className="text-sm md:text-xl mb-10 text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-          Backend & AI Engineer with 3+ years of experience. I specialize in building scalable backend services and experienced in e-commerce and government-grade systems.
-        </p>
-
-        {/* Button + Scroll icon in one flex container */}
-        <div className="flex flex-col items-center gap-6 -mb-12 mt-12">
-          <div className="flex gap-4 flex-wrap justify-center">
-            <Button
-              onClick={() => scrollToSection("summary")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full animate-glow smooth-transition transform hover:scale-105 w-40"
-            >
-              Explore More
-            </Button>
-            <Button
-              onClick={() =>
-                window.open(
-                  "https://kycaine.github.io/eternaltech/",
-                  "_blank",
-                  "noopener,noreferrer"
-                )
-              }
-              className="bg-transparent border-2 border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6 rounded-full animate-glow smooth-transition transform hover:scale-105"
-            >
-              Need AI Automation?
-            </Button>
+      <div className="relative z-10 container mx-auto px-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16 items-center">
+          {/* Left Column (3/12) */}
+          <div className="md:col-span-4 text-right animate-slide-up">
+            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+              {/* <span className="text-foreground">&lt;</span> */}
+              <span className="gold-gradient">Rezki </span>
+              <span className="gold-gradient">Ade </span>
+              {/* <span className="text-foreground">/&gt;</span> */}
+            </h1>
+            <h3 className="text-lg md:text-xl lg:text-2xl text-muted-foreground font-bold leading-tight">
+              Fullstack Engineer <br /> AI Systems Engineer <br /> Backend Specialist
+            </h3>
           </div>
-          <div className="mt-12 w-6 h-10 border-2 border-primary rounded-full flex justify-center items-start animate-float">
-            <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
+
+          {/* Right Column (9/12) */}
+          <div className="md:col-span-8 text-left animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <div className="border-l-4 border-primary pl-6 py-2">
+              <p className="text-sm md:text-xl lg:text-2xl text-foreground font-medium leading-loose">
+                3+ years of experience converting caffeine into scalable code. My track record spans from the brutal battlegrounds of e-commerce to the "highly bureaucratic" world of government systems. My expertise? Defusing explosive errors and educating AI on basic human manners, morals, and ethics so it doesn't end up with a mental breakdown like its creator, HAHAHA. The systems I build are guaranteed to be as rock-solid as my faith in Allah. TAKBEERR!!
+              </p>
+            </div>
           </div>
         </div>
+
+
       </div>
     </section>
   );
