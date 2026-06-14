@@ -1,5 +1,5 @@
-import { Mail, Phone, Linkedin } from 'lucide-react';
-import { FaLaptopCode, FaWhatsapp } from 'react-icons/fa';
+import { Mail, Phone, Linkedin, Github } from 'lucide-react';
+import { FaLaptopCode, FaWhatsapp, FaTelegram } from 'react-icons/fa';
 
 
 const ContactSection = () => {
@@ -15,6 +15,18 @@ const ContactSection = () => {
       label: "LinkedIn",
       value: "Rezki Ade",
       link: "https://www.linkedin.com/in/rizkyap90s/"
+    },
+    {
+      icon: <Github size={24} />,
+      label: "GitHub",
+      value: "Kycaine",
+      link: "https://github.com/kycaine"
+    },
+    {
+      icon: <FaTelegram size={24} />,
+      label: "Telegram",
+      value: "Rezki",
+      link: "https://t.me/kycaine"
     }
   ];
 
@@ -36,8 +48,8 @@ const ContactSection = () => {
             <a
               key={index}
               href={contact.link}
-              target={contact.label === 'LinkedIn' ? '_blank' : undefined}
-              rel={contact.label === 'LinkedIn' ? 'noopener noreferrer' : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-card backdrop-blur-sm rounded-xl p-6 border border-border smooth-transition hover:border-primary hover:bg-card/70 group flex items-center space-x-4"
             >
               <div className="text-primary group-hover:scale-110 smooth-transition">

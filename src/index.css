@@ -138,13 +138,13 @@ All colors MUST be HSL.
 
   /* Global Text Overrides */
   * {
-    color: #EEE0CC !important;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8) !important;
+    color: #454040 !important;
+    text-shadow: none !important;
   }
 
   .gold-gradient {
     background: none !important;
-    -webkit-text-fill-color: #EEE0CC !important;
+    -webkit-text-fill-color: #454040 !important;
   }
 
   /* Make Cards Transparent */
@@ -156,17 +156,17 @@ All colors MUST be HSL.
   .bg-secondary\/50, 
   .bg-black\/50,
   .bg-background\/80 {
-    background-color: transparent !important;
-    backdrop-filter: none !important;
+    background-color: hsl(var(--card) / 0.2) !important;
+    backdrop-filter: blur(4px) !important;
   }
 
-  /* Card Hover State (Dark Grey) */
+  /* Card Hover State */
   .bg-card.group:hover {
-    background-color: #042d3c !important;
+    background-color: #F7F1DE !important;
   }
 
-  /* Modal Detail Background (Dark Grey) */
+  /* Modal Detail Background */
   .fixed .bg-card {
-    background-color: #042d3c !important;
+    background-color: #F7F1DE !important;
   }
 }

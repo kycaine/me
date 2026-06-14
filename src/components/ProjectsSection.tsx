@@ -97,14 +97,14 @@ const ProjectsSection = () => {
       <section id="projects" className="py-20 bg-transparent">
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            <span className="gold-gradient">Projects</span>
+            <span className="gold-gradient">Works</span>
           </h2>
 
           {/* Highlighted Projects */}
           <div className="mb-16">
             <h3 className="text-3xl md:text-4xl font-bold mb-8 flex items-center ">
               <Code className="gold-gradient mr-3" size={32} />
-              <span className="gold-gradient">Highlighted Projects</span>
+              <span className="gold-gradient">Highlighted Repositories</span>
             </h3>
             {loadingHighlighted ? (
               <p className="text-lg text-muted-foreground">Loading highlighted projects...</p>
@@ -121,7 +121,7 @@ const ProjectsSection = () => {
           <div className="text-center mt-12">
             <button
               onClick={handleShowRepos}
-              className="px-6 py-3 bg-[#a20d42] text-primary-foreground rounded-lg text-lg font-semibold hover:bg-[#850a35] smooth-transition"
+              className="px-6 py-3 bg-[#454040] !text-white rounded-lg text-lg font-semibold hover:bg-opacity-80 smooth-transition"
             >
               {showRepos ? "Hide All Repos" : "View All Repos"}
             </button>
@@ -232,7 +232,7 @@ const ProjectsSection = () => {
                 href={selectedRepo.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-[#a20d42] text-primary-foreground px-6 py-3 rounded-lg text-lg font-semibold hover:bg-[#850a35] smooth-transition w-full sm:w-auto"
+                className="inline-flex items-center justify-center bg-[#454040] !text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-opacity-80 smooth-transition w-full sm:w-auto"
               >
                 Visit Project on GitHub <ExternalLink className="ml-2" size={18} />
               </a>

@@ -1,7 +1,7 @@
 
 import HeroSection from "@/components/HeroSection";
-import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import BlogsSection from "@/components/BlogsSection";
 import ContactSection from "@/components/ContactSection";
 import { useEffect, useRef } from "react";
 
@@ -33,10 +33,10 @@ const Index = () => {
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0xa20d42,
-          color2: 0xd49b66,
+          color: 0x3e3e3e,
+          color2: 0xca005f,
           size: 0.50,
-          backgroundColor: 0x42d3c // match soft-linen background
+          backgroundColor: 0xfff5e1 // match soft-linen background
         });
       }
 
@@ -54,8 +54,9 @@ const Index = () => {
           points: 20.00,
           maxDistance: 10.00,
           spacing: 20.00,
-          color: 0xd49b66,
+          color: 0xc32121,
           backgroundColor: 0x000000,
+          // showDots: false,
           backgroundAlpha: 0.0 // transparent so Birds can be seen
         });
       }
@@ -156,17 +157,17 @@ const Index = () => {
           <HeroSection />
         </div>
         <div className="w-full min-h-screen md:w-[100vw] md:h-screen md:overflow-y-auto flex-shrink-0 hide-scrollbar">
-          <ExperienceSection />
+          <ProjectsSection />
         </div>
         <div className="w-full min-h-screen md:w-[100vw] md:h-screen md:overflow-y-auto flex-shrink-0 hide-scrollbar">
-          <ProjectsSection />
+          <BlogsSection />
         </div>
         <div className="w-full min-h-screen md:w-[100vw] md:h-screen md:overflow-y-auto flex-shrink-0 hide-scrollbar flex flex-col">
           <div className="flex-grow flex flex-col justify-center">
             <ContactSection />
           </div>
           {/* Footer */}
-          <footer className="bg-card/80 backdrop-blur-md border-t border-transparent py-8 w-full mt-auto">
+          <footer className="bg-transparent border-t border-transparent py-8 w-full mt-auto">
             <div className="container mx-auto px-6 text-center">
               <p className="text-muted-foreground">
                 © {new Date().getFullYear()} Rezki Ade, Indonesia. Crafted with passion — All rights reserved.
