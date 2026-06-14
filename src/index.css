@@ -162,11 +162,11 @@ All colors MUST be HSL.
 
   /* Card Hover State (Dark Grey) */
   .bg-card.group:hover {
-    background-color: #333333 !important;
+    background-color: #042d3c !important;
   }
 
   /* Modal Detail Background (Dark Grey) */
   .fixed .bg-card {
-    background-color: #333333 !important;
+    background-color: #042d3c !important;
   }
 }

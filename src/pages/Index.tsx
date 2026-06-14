@@ -33,10 +33,10 @@ const Index = () => {
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0x570303,
+          color: 0xa20d42,
           color2: 0xd49b66,
           size: 0.50,
-          backgroundColor: 0xf0f0f // match soft-linen background
+          backgroundColor: 0x42d3c // match soft-linen background
         });
       }
 

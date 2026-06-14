@@ -121,7 +121,7 @@ const ProjectsSection = () => {
           <div className="text-center mt-12">
             <button
               onClick={handleShowRepos}
-              className="px-6 py-3 bg-[#800000] text-primary-foreground rounded-lg text-lg font-semibold hover:bg-[#660000] smooth-transition"
+              className="px-6 py-3 bg-[#a20d42] text-primary-foreground rounded-lg text-lg font-semibold hover:bg-[#850a35] smooth-transition"
             >
               {showRepos ? "Hide All Repos" : "View All Repos"}
             </button>
@@ -232,7 +232,7 @@ const ProjectsSection = () => {
                 href={selectedRepo.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-[#800000] text-primary-foreground px-6 py-3 rounded-lg text-lg font-semibold hover:bg-[#660000] smooth-transition w-full sm:w-auto"
+                className="inline-flex items-center justify-center bg-[#a20d42] text-primary-foreground px-6 py-3 rounded-lg text-lg font-semibold hover:bg-[#850a35] smooth-transition w-full sm:w-auto"
               >
                 Visit Project on GitHub <ExternalLink className="ml-2" size={18} />
               </a>
