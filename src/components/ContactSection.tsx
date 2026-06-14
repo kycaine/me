@@ -7,8 +7,8 @@ const ContactSection = () => {
     {
       icon: <Mail size={24} />,
       label: "Email",
-      value: "rizkyap90s@gmail.com",
-      link: "mailto:rizkyap90s@gmail.com"
+      value: "talkto.rezki@gmail.com",
+      link: "mailto:talkto.rezki@gmail.com"
     },
     {
       icon: <Linkedin size={24} />,

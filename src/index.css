@@ -138,13 +138,13 @@ All colors MUST be HSL.
 
   /* Global Text Overrides */
   * {
-    color: #ffffff !important;
+    color: #EEE0CC !important;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8) !important;
   }
 
   .gold-gradient {
     background: none !important;
-    -webkit-text-fill-color: #ffffff !important;
+    -webkit-text-fill-color: #EEE0CC !important;
   }
 
   /* Make Cards Transparent */
