@@ -2,6 +2,7 @@
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import BlogsSection from "@/components/BlogsSection";
+import SnakeGameSection from "@/components/SnakeGameSection";
 import ContactSection from "@/components/ContactSection";
 import { useEffect, useRef } from "react";
 
@@ -161,6 +162,9 @@ const Index = () => {
         </div>
         <div className="w-full min-h-screen md:w-[100vw] md:h-screen md:overflow-y-auto flex-shrink-0 hide-scrollbar">
           <BlogsSection />
+        </div>
+        <div className="w-full min-h-screen md:w-[100vw] md:h-screen md:overflow-y-auto flex-shrink-0 hide-scrollbar">
+          <SnakeGameSection />
         </div>
         <div className="w-full min-h-screen md:w-[100vw] md:h-screen md:overflow-y-auto flex-shrink-0 hide-scrollbar flex flex-col">
           <div className="flex-grow flex flex-col justify-center">
