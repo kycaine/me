@@ -34,7 +34,7 @@ const HeroSection = () => {
           <div className="md:col-span-8 text-left animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <div className="border-l-4 border-[#454040] pl-6 py-2">
               <p className="text-base md:text-2xl lg:text-3xl text-foreground font-medium leading-loose">
-                4+ years of experience converting caffeine into scalable code. My track record spans from the brutal battlegrounds of e-commerce to the "highly bureaucratic" world of government systems. My expertise? Defusing explosive errors and educating AI on basic human manners, morals, and ethics so it doesn't end up with a mental breakdown like its creator, hahaha. The systems I build are guaranteed to be as rock-solid as my faith in Allah. TAKBEERR!!
+                4+ years of experience converting caffeine into scalable code. My track record spans from the brutal battlegrounds of e-commerce to the "highly bureaucratic" world of government systems. My expertise? Defusing explosive errors and educating AI on basic human manners, morals, and ethics so it doesn't end up with a mental breakdown like its creator, hahaha. The systems I build are guaranteed to be as rock-solid as my faith in Allah.
               </p>
             </div>
           </div>
