@@ -10,83 +10,83 @@ All colors MUST be HSL.
   :root {
     /* Portfolio Color Scheme */
     --background: 42 22.0% 88.4%; /* #e8e4db */
-    --foreground: 0 0% 100%; /* #687351 */
+    --foreground: 0 4% 26%; /* #454040 */
 
     --card: 42 20.0% 73.5%; /* #c9c1ae */
-    --card-foreground: 0 0% 100%; /* #687351 */
+    --card-foreground: 0 4% 26%; /* #454040 */
 
     --popover: 42 20.0% 73.5%;
-    --popover-foreground: 0 0% 100%;
+    --popover-foreground: 0 4% 26%;
 
-    --primary: 0 0% 100%; /* #687351 */
+    --primary: 0 4% 26%; /* #454040 */
     --primary-foreground: 42 22.0% 88.4%; /* #e8e4db */
 
     --secondary: 71 15.3% 56.5%; /* #9ba17f */
-    --secondary-foreground: 0 0% 100%; /* #687351 */
+    --secondary-foreground: 0 4% 26%; /* #454040 */
 
     --muted: 42 20.0% 73.5%; /* #c9c1ae */
-    --muted-foreground: 0 0% 100%; /* #687351 */
+    --muted-foreground: 0 4% 26%; /* #454040 */
 
     --accent: 71 15.3% 56.5%; /* #9ba17f */
-    --accent-foreground: 0 0% 100%; /* #687351 */
+    --accent-foreground: 0 4% 26%; /* #454040 */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 42 22.0% 88.4%;
 
     --border: 42 20.0% 73.5%; /* #c9c1ae */
     --input: 42 20.0% 73.5%; /* #c9c1ae */
-    --ring: 0 0% 100%; /* #687351 */
+    --ring: 0 4% 26%; /* #454040 */
 
     --radius: 0.75rem;
 
     --sidebar-background: 42 22.0% 88.4%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
+    --sidebar-foreground: 0 4% 26%;
+    --sidebar-primary: 0 4% 26%;
     --sidebar-primary-foreground: 42 22.0% 88.4%;
     --sidebar-accent: 71 15.3% 56.5%;
-    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-accent-foreground: 0 4% 26%;
     --sidebar-border: 42 20.0% 73.5%;
-    --sidebar-ring: 0 0% 100%;
+    --sidebar-ring: 0 4% 26%;
   }
 
   .dark {
     /* Apply same new color scheme to dark mode */
     --background: 42 22.0% 88.4%; /* #e8e4db */
-    --foreground: 0 0% 100%; /* #687351 */
+    --foreground: 0 4% 26%; /* #454040 */
 
     --card: 42 20.0% 73.5%; /* #c9c1ae */
-    --card-foreground: 0 0% 100%; /* #687351 */
+    --card-foreground: 0 4% 26%; /* #454040 */
 
     --popover: 42 20.0% 73.5%;
-    --popover-foreground: 0 0% 100%;
+    --popover-foreground: 0 4% 26%;
 
-    --primary: 0 0% 100%; /* #687351 */
+    --primary: 0 4% 26%; /* #454040 */
     --primary-foreground: 42 22.0% 88.4%; /* #e8e4db */
 
     --secondary: 71 15.3% 56.5%; /* #9ba17f */
-    --secondary-foreground: 0 0% 100%; /* #687351 */
+    --secondary-foreground: 0 4% 26%; /* #454040 */
 
     --muted: 42 20.0% 73.5%; /* #c9c1ae */
-    --muted-foreground: 0 0% 100%; /* #687351 */
+    --muted-foreground: 0 4% 26%; /* #454040 */
 
     --accent: 71 15.3% 56.5%; /* #9ba17f */
-    --accent-foreground: 0 0% 100%; /* #687351 */
+    --accent-foreground: 0 4% 26%; /* #454040 */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 42 22.0% 88.4%;
 
     --border: 42 20.0% 73.5%; /* #c9c1ae */
     --input: 42 20.0% 73.5%; /* #c9c1ae */
-    --ring: 0 0% 100%; /* #687351 */
+    --ring: 0 4% 26%; /* #454040 */
 
     --sidebar-background: 42 22.0% 88.4%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
+    --sidebar-foreground: 0 4% 26%;
+    --sidebar-primary: 0 4% 26%;
     --sidebar-primary-foreground: 42 22.0% 88.4%;
     --sidebar-accent: 71 15.3% 56.5%;
-    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-accent-foreground: 0 4% 26%;
     --sidebar-border: 42 20.0% 73.5%;
-    --sidebar-ring: 0 0% 100%;
+    --sidebar-ring: 0 4% 26%;
   }
 }
 
@@ -137,8 +137,8 @@ All colors MUST be HSL.
   }
 
   /* Global Text Overrides */
-  * {
-    color: #454040 !important;
+  body, html, * {
+    color: #454040;
     text-shadow: none !important;
   }
 
