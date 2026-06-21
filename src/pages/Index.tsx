@@ -1,4 +1,3 @@
-
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import BlogsSection from "@/components/BlogsSection";
@@ -21,48 +20,57 @@ const Index = () => {
   useEffect(() => {
     let vantaEffectBirds: any;
     let vantaEffectNet: any;
+    let attempts = 0;
+    const maxAttempts = 10; // Batasi maksimal 10 kali coba (1 detik) jika skrip Vanta belum siap
 
     const initVanta = () => {
-      // Initialize Globe (Background Layer)
-      if (window.VANTA && window.VANTA.GLOBE && vantaRef.current && !vantaEffectBirds) {
-        vantaEffectBirds = window.VANTA.GLOBE({
-          el: vantaRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          color: 0x3e3e3e,
-          color2: 0xca005f,
-          size: 0.50,
-          backgroundColor: 0xfff5e1 // match soft-linen background
-        });
+      try {
+        // Initialize Globe (Background Layer)
+        if (window.VANTA && window.VANTA.GLOBE && vantaRef.current && !vantaEffectBirds) {
+          vantaEffectBirds = window.VANTA.GLOBE({
+            el: vantaRef.current,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3e3e3e,
+            color2: 0xca005f,
+            size: 0.50,
+            backgroundColor: 0xfff5e1 // match soft-linen background
+          });
+        }
+
+        // Initialize Net (Foreground Layer)
+        if (window.VANTA && window.VANTA.NET && vantaNetRef.current && !vantaEffectNet) {
+          vantaEffectNet = window.VANTA.NET({
+            el: vantaNetRef.current,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            points: 20.00,
+            maxDistance: 10.00,
+            spacing: 20.00,
+            color: 0xc32121,
+            backgroundColor: 0x000000,
+            backgroundAlpha: 0.0 // transparent so Birds can be seen
+          });
+        }
+      } catch (error) {
+        // Tangkap eror WebGL di sini agar tidak menyandera render React
+        console.error("Vanta.js gagal dimuat karena kendala WebGL/Browser:", error);
+        return; // Hentikan fungsi jika terjadi crash internal WebGL
       }
 
-      // Initialize Net (Foreground Layer)
-      if (window.VANTA && window.VANTA.NET && vantaNetRef.current && !vantaEffectNet) {
-        vantaEffectNet = window.VANTA.NET({
-          el: vantaNetRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          points: 20.00,
-          maxDistance: 10.00,
-          spacing: 20.00,
-          color: 0xc32121,
-          backgroundColor: 0x000000,
-          // showDots: false,
-          backgroundAlpha: 0.0 // transparent so Birds can be seen
-        });
-      }
-
-      if (!vantaEffectBirds || !vantaEffectNet) {
+      // Jalankan perulangan hanya jika script belum ter-load dan belum melewati batas maksimal percobaan
+      if ((!vantaEffectBirds || !vantaEffectNet) && attempts < maxAttempts) {
+        attempts++;
         setTimeout(initVanta, 100);
       }
     };
@@ -80,17 +88,9 @@ const Index = () => {
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
-      // Disable custom horizontal scroll behavior on mobile screens
-      if (window.innerWidth < 768) {
-        return;
-      }
+      if (window.innerWidth < 768) return;
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
 
-      // Allow native horizontal scrolling (e.g. from trackpad)
-      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-        return;
-      }
-
-      // Check if we are scrolling over a vertically scrollable element
       const path = e.composedPath();
       let isVerticalScrollable = false;
       for (let i = 0; i < path.length; i++) {
@@ -118,10 +118,7 @@ const Index = () => {
     };
 
     container.addEventListener('wheel', handleWheel, { passive: false });
-
-    return () => {
-      container.removeEventListener('wheel', handleWheel);
-    };
+    return () => container.removeEventListener('wheel', handleWheel);
   }, []);
 
   useEffect(() => {
@@ -131,11 +128,9 @@ const Index = () => {
     if (!container || !bgContainer || !netContainer) return;
 
     const handleScroll = () => {
-      // Calculate how far we've scrolled horizontally (0 to 1)
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
       const scrollRatio = maxScrollLeft > 0 ? container.scrollLeft / maxScrollLeft : 0;
 
-      // Move both backgrounds slightly to create a parallax effect
       bgContainer.style.transform = `translateX(-${scrollRatio * 20}%)`;
       netContainer.style.transform = `translateX(-${scrollRatio * 20}%)`;
     };
@@ -146,8 +141,8 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen text-foreground overflow-hidden">
-      {/* Background container made slightly wider to allow for parallax movement */}
-      <div ref={vantaRef} className="fixed top-0 left-0 h-screen w-[125vw] -z-20 pointer-events-none" />
+      {/* Background Layer */}
+      <div ref={vantaRef} className="fixed top-0 left-0 h-screen w-[125vw] -z-20 pointer-events-none bg-[#fff5e1]" />
       <div ref={vantaNetRef} className="fixed top-0 left-0 h-screen w-[125vw] -z-10 pointer-events-none" />
 
       <div
@@ -170,7 +165,6 @@ const Index = () => {
           <div className="flex-grow flex flex-col justify-center">
             <ContactSection />
           </div>
-          {/* Footer */}
           <footer className="bg-transparent border-t border-transparent py-8 w-full mt-auto">
             <div className="container mx-auto px-6 text-center">
               <p className="text-muted-foreground">
