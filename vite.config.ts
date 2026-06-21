@@ -3,7 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/me/" : "/",
+  // Cukup ubah bagian ini menjadi "/" agar mendukung kustom domain baru kamu
+  base: "/",
   server: {
     host: "::",
     port: 8080,
