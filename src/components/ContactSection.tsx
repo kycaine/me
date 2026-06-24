@@ -1,5 +1,5 @@
 import { Mail, Phone, Linkedin, Github } from 'lucide-react';
-import { FaLaptopCode, FaWhatsapp, FaTelegram } from 'react-icons/fa';
+import { FaLaptopCode, FaWhatsapp } from 'react-icons/fa';
 
 
 const ContactSection = () => {
@@ -21,18 +21,12 @@ const ContactSection = () => {
       label: "GitHub",
       value: "Kycaine",
       link: "https://github.com/kycaine"
-    },
-    {
-      icon: <FaTelegram size={24} />,
-      label: "Telegram",
-      value: "Rezki",
-      link: "https://t.me/kycaine"
     }
   ];
 
   return (
     <section id="contact" className="py-20 bg-transparent">
-      <div className="container mx-auto px-6 max-w-4xl">
+      <div className="container mx-auto px-6 max-w-5xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
           <span className="gold-gradient">Ping me!</span>
         </h2>
@@ -43,7 +37,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           {contactInfo.map((contact, index) => (
             <a
               key={index}
