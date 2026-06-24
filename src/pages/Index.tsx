@@ -22,6 +22,7 @@ const Index = () => {
     let vantaEffectNet: any;
     let attempts = 0;
     const maxAttempts = 10; // Batasi maksimal 10 kali coba (1 detik) jika skrip Vanta belum siap
+    let timeoutId: NodeJS.Timeout;
 
     const initVanta = () => {
       try {
@@ -71,13 +72,14 @@ const Index = () => {
       // Jalankan perulangan hanya jika script belum ter-load dan belum melewati batas maksimal percobaan
       if ((!vantaEffectBirds || !vantaEffectNet) && attempts < maxAttempts) {
         attempts++;
-        setTimeout(initVanta, 100);
+        timeoutId = setTimeout(initVanta, 100);
       }
     };
 
     initVanta();
 
     return () => {
+      if (timeoutId) clearTimeout(timeoutId);
       if (vantaEffectBirds) vantaEffectBirds.destroy();
       if (vantaEffectNet) vantaEffectNet.destroy();
     };

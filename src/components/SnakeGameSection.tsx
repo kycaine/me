@@ -2,27 +2,52 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, query, orderBy, limit, getDocs, addDoc, serverTimestamp, Timestamp } from 'firebase/firestore';
 
-// --- PLACEHOLDER FIREBASE CONFIG ---
-// Replace with your actual Firebase project configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCNV1yCKD9kNf9ii35Wnhqme4CS454WjkA",
-  authDomain: "personal-web-6667f.firebaseapp.com",
-  projectId: "personal-web-6667f",
-  storageBucket: "personal-web-6667f.firebasestorage.app",
-  messagingSenderId: "254438906408",
-  appId: "1:254438906408:web:516ffda41960b73b12b31d",
-  measurementId: "G-FTJ96CP15D"
+// Firebase configuration is now fetched dynamically from the backend
+let globalDb: any = null;
+let firebaseInitPromise: Promise<any> | null = null;
+
+const initFirebaseGlobal = async () => {
+  if (firebaseInitPromise) return firebaseInitPromise;
+
+  firebaseInitPromise = (async () => {
+    try {
+      // Check cache first to prevent API hit on page refresh
+      const cachedConfig = sessionStorage.getItem('firebaseConfigCache');
+      if (cachedConfig) {
+        const parsedConfig = JSON.parse(cachedConfig);
+        const app = initializeApp(parsedConfig);
+        globalDb = getFirestore(app);
+        return globalDb;
+      }
+
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const API_BASE_URL = isLocal ? 'http://localhost:8787' : 'https://ky-key-management.rizkyap90s.workers.dev';
+      
+      const response = await fetch(`${API_BASE_URL}/config/firebase`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch Firebase config');
+      }
+      
+      const data = await response.json();
+      if (data && data.firebase) {
+        // Save to cache so next refresh doesn't hit API
+        sessionStorage.setItem('firebaseConfigCache', JSON.stringify(data.firebase));
+
+        const app = initializeApp(data.firebase);
+        globalDb = getFirestore(app);
+        return globalDb;
+      }
+    } catch (error) {
+      console.warn("Firebase initialization failed:", error);
+    }
+    return null;
+  })();
+
+  return firebaseInitPromise;
 };
 
-// Initialize Firebase
-// We wrap in a try/catch so it doesn't crash if config is invalid/missing
-let db: any = null;
-try {
-  const app = initializeApp(firebaseConfig);
-  db = getFirestore(app);
-} catch (e) {
-  console.warn("Firebase config is invalid or missing.", e);
-}
+// Initiate fetch immediately when the script loads
+initFirebaseGlobal();
 
 // --- GAME CONSTANTS ---
 const GRID_SIZE = 25; // increased from 20 to 25
@@ -41,6 +66,24 @@ interface ScoreEntry {
 }
 
 const SnakeGameSection = () => {
+  // Firebase State
+  const [db, setDb] = useState<any>(globalDb);
+
+  // Initialize Firebase dynamically
+  useEffect(() => {
+    if (globalDb) {
+      setDb(globalDb);
+    } else {
+      initFirebaseGlobal().then((firestoreDb) => {
+        if (firestoreDb) {
+          setDb(firestoreDb);
+        } else {
+          setLeaderboardLoading(false);
+        }
+      });
+    }
+  }, []);
+
   // Game State
   const [gameState, setGameState] = useState<GameState>('welcome');
   const [snake, setSnake] = useState<Point[]>([{ x: 10, y: 10 }, { x: 9, y: 10 }]);
@@ -69,7 +112,7 @@ const SnakeGameSection = () => {
   const speedRef = useRef<number>(INITIAL_SPEED);
 
   // Fetch Leaderboard
-  const fetchLeaderboard = async () => {
+  const fetchLeaderboard = useCallback(async () => {
     if (!db) {
       setLeaderboardLoading(false);
       return;
@@ -97,11 +140,14 @@ const SnakeGameSection = () => {
     } finally {
       setLeaderboardLoading(false);
     }
-  };
+  }, [db]);
 
   useEffect(() => {
-    fetchLeaderboard();
-  }, []);
+    if (db) {
+      setLeaderboardLoading(true);
+      fetchLeaderboard();
+    }
+  }, [db, fetchLeaderboard]);
 
   // Keyboard controls
   useEffect(() => {
